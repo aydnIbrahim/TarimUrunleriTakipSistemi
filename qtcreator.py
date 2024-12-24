@@ -14,12 +14,11 @@ class MainWindow(QMainWindow):
 
         # .ui dosyasını yükle
         loader = QUiLoader()
-        ui_file = "/Users/ibrahimaydin/QtProjects/QtDemo1/form.ui"
+        ui_file = "Qt Creator Files/form.ui"
         self.ui = loader.load(ui_file)
         self.setCentralWidget(self.ui)
 
         self.page_ciftlikler = PageCiftlikler(self.ui)
-        self.page_ciftlik_ekle = PageCiftlikEkle(self.ui)
 
         # Ana pencere ayarları
         self.setFixedSize(1000, 720)
