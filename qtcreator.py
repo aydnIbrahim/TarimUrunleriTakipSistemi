@@ -1,11 +1,13 @@
 # qtcreator.py
 
 import sys
+
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtUiTools import QUiLoader
 
 from Pages.PageCiftlikler import PageCiftlikler
-from Pages.PageCiftlikEkle import PageCiftlikEkle
+from Pages.PageUrunler import PageUrunler
 
 
 class MainWindow(QMainWindow):
@@ -14,11 +16,12 @@ class MainWindow(QMainWindow):
 
         # .ui dosyasını yükle
         loader = QUiLoader()
-        ui_file = "Qt Creator Files/form.ui"
+        ui_file = "Qt Creator Files/form_2.ui"
         self.ui = loader.load(ui_file)
         self.setCentralWidget(self.ui)
 
         self.page_ciftlikler = PageCiftlikler(self.ui)
+        self.page_urunler = PageUrunler(self.ui)
 
         # Ana pencere ayarları
         self.setFixedSize(1000, 720)
@@ -26,7 +29,8 @@ class MainWindow(QMainWindow):
 
         # Butonların tıklama sinyallerini ilgili metodlara bağlayın
         self.ui.btnCiftlikler.clicked.connect(self.page_ciftlikler.show_ciftlikler_page)
-
+        self.ui.btnUrunler.clicked.connect(self.page_urunler.show_urunler_page)
+        self.ui.btnUrunAra.setIcon(QIcon("Resources/magnifyingglass.png"))
         self.page_ciftlikler.show_ciftlikler_page()
 
 

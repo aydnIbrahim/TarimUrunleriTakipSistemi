@@ -122,3 +122,31 @@ def addNewCiftlik(params):
 
     finally:
         db.disconnect()
+
+
+def getUrunler():
+    """
+    Ürünler tablosundan kayıtları çeker.
+    """
+    db = DatabaseConnection(
+        server=SERVER,
+        database=DATABASE,
+        username=USERNAME,
+        password=PASSWORD
+    )
+    try:
+        rows = db.execute_query("""SELECT
+                                    U.Ad,
+                                    U.StokMiktari,
+                                    U.BirimFiyati,
+                                    U.ResimYolu,
+                                    K.Kategori,
+                                    B.Birim
+                                    FROM 
+                                        Urunler U 
+                                    JOIN
+                                        Birimler AS B ON U.BirimID = B.BirimID
+                                    JOIN Kategoriler AS K ON K.KategoriID = U.KategoriID;""")
+        return rows
+    finally:
+        db.disconnect()
