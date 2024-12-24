@@ -6,10 +6,12 @@ from PySide6.QtWidgets import QTableWidgetItem, QHBoxLayout, QPushButton, QLineE
 from DB import db_queries
 
 
-class PageUrunler():
+class PageUrunler:
     def __init__(self, ui):
         super().__init__()
         self.ui = ui
+
+        # self.ui.btnSepet.clicked.connect()
 
     def load_urunler(self):
         """
