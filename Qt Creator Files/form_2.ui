@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>signup</class>
+ <widget class="QWidget" name="signup">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>signup</string>
+  </property>
+  <widget class="QWidget" name="headerWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1001</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#headerWidget {
+    background-color: #0D8330;
+}</string>
+   </property>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>471</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1001</width>
+      <height>83</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="headerHorizontalLayout">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>500</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCiftlikler">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>OpenHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#btnCiftlikler {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Hover efekti */
+QPushButton#btnCiftlikler:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+}
+
+QPushButton#btnCiftlikler:pressed {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+QPushButton#btnCiftlikler:checked {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border: 1px solid white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Çiftlikler</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnUrunler">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>OpenHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#btnUrunler {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Hover efekti */
+QPushButton#btnUrunler:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+}
+
+QPushButton#btnUrunler:pressed {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+QPushButton#btnUrunler:checked {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border: 1px solid white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Ürünler</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnHesap">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>OpenHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+	font-size: 16px;
+}
+
+/* Hover efekti */
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Yarı şeffaf beyaz arka plan */
+    color: white;
+	border: 1px solid white;
+}
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Hesap</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>16</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="AramaUrunler">
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit#AramaUrunler {
+    background-color: rgba(0, 128, 0, 0.2); /* Kutunun iç kısmı yeşilimsi yarı saydam */
+    color: white; /* Yazı rengi beyaz */
+    font-weight: bold; /* Yazı kalın */
+    text-align: center; /* Metni ortala */
+    border: 1px solid darkgray; /* Çerçeve koyu gri */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+}
+
+QLineEdit#AramaUrunler:hover {
+    background-color: rgba(128, 128, 128, 0.2); /* Üzerine gelindiğinde iç kısım gri tonunda */
+    border-color: darkgray; /* Çerçeve koyu gri kalır */
+    color: white; /* Yazı rengi beyaz */
+}
+
+QLineEdit#AramaUrunler:focus {
+    background-color: rgba(0, 128, 0, 0.4); /* Kutunun iç kısmı odaklanıldığında daha koyu yeşil olur */
+    border-color: darkgray; /* Çerçeve koyu gri */
+    color: white; /* Yazı rengi beyaz */
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="maxLength">
+        <number>200</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnUrunAra">
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>OpenHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#btnUrunAra {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+/* Hover efekti */
+QPushButton#btnUrunArar:hover {
+    background-color: rgba(224, 224, 224, 0.2);
+
+    border: 1px solid white;
+}
+
+QPushButton#btnUrunAra:pressed {
+    background-color: rgba(224, 224, 224, 0.5);
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>80</y>
+     <width>1001</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>4</number>
+   </property>
+   <widget class="QWidget" name="pageCiftlikler">
+    <property name="styleSheet">
+     <string notr="true">QWidget#pageCiftlikler {
+    background-color: #FFFFFF;
+}</string>
+    </property>
+    <widget class="QTableWidget" name="tableCiftlikler">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>641</height>
+      </rect>
+     </property>
+     <property name="cursor" stdset="0">
+      <cursorShape>OpenHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string>QPushButton#btnUrunAra {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+/* Hover efekti */
+QPushButton#btnUrunArar:hover {
+    background-color: rgba(224, 224, 224, 0.2);
+
+    border: 1px solid white;
+}
+
+QPushButton#btnUrunAra:pressed {
+    background-color: rgba(224, 224, 224, 0.5);
+}
+</string>
+     </property>
+     <property name="columnCount">
+      <number>6</number>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>150</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Çiftlik Fotoğrafı</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Adı</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Arazi Türü</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Büyüklük</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Adres</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Sahibi</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="btnAddCiftlik">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>560</y>
+       <width>60</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="cursor">
+      <cursorShape>OpenHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#btnAddCiftlik {
+   border-radius: 10px;
+}
+
+QPushButton#btnAddCiftlik:hover {
+    background-color: rgba(224, 224, 224, 0.2); 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../WhatsappWeb/Resources/plus.png</normaloff>../../WhatsappWeb/Resources/plus.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageCiftlikEkle">
+    <property name="styleSheet">
+     <string notr="true">QWidget#pageCiftlikEkle {
+    background-color: #FFFFFF;
+}</string>
+    </property>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="labelYeniCiftlik">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#labelYeniCiftlik {
+font-size: 36px;
+color: rgb(0, 0, 0);
+font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Yeni Çiftlik Ekle</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnApprove">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnApprove {
+background-color: rgba(224, 224, 224, 0.2);
+   border-radius: 10px;
+}
+
+QPushButton#btnApprove:hover {
+    background-color: rgb(190, 192, 192); 
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnCancel">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnCancel {
+    background-color: rgba(224, 224, 224, 0.2); 
+   border-radius: 10px;
+}
+
+QPushButton#btnCancel:hover {
+
+background-color: rgb(190, 192, 192); 
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>80</y>
+       <width>1001</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#label{
+color: rgb(0, 0, 0);}</string>
+        </property>
+        <property name="text">
+         <string>Çiftlik Adı:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditCiftlikAdi">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#lineEditCiftlikAdi{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#label_2{
+color: rgb(0, 0, 0);}</string>
+        </property>
+        <property name="text">
+         <string>Arazi Türü:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditAraziTuru">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#lineEditAraziTuru{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#label_3{
+color: rgb(0, 0, 0);}</string>
+        </property>
+        <property name="text">
+         <string>Büyüklük:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditBuyukluk">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#lineEditBuyukluk{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSelectImage">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnSelectImage {
+    background-color: #0433FF;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Hover efekti */
+QPushButton#btnSelectImage:hover {
+    background-color: #0417C9; 
+    color: white;
+    border: 1px solid white;
+}
+</string>
+        </property>
+        <property name="text">
+         <string> Fotoğraf Seç  </string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+     <zorder>label_3</zorder>
+     <zorder>label</zorder>
+     <zorder>lineEditCiftlikAdi</zorder>
+     <zorder>label_2</zorder>
+     <zorder>lineEditAraziTuru</zorder>
+     <zorder>lineEditBuyukluk</zorder>
+     <zorder>btnSelectImage</zorder>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>190</y>
+       <width>1001</width>
+       <height>261</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>18</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#label_4{
+color: rgb(0, 0, 0);}</string>
+        </property>
+        <property name="text">
+         <string>Adres Bilgileri</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="rightMargin">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_8{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Mahalle:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditMahalle">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditMahalle{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_7{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Sokak:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditSokak">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditSokak{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_6{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Bina No:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditBinaNo">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditBinaNo{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_5{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Daire No:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditDaireNo">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditDaireNo{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="rightMargin">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_11{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Şehir:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditSehir">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditSehir{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_10">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_10{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Ülke:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditUlke">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditUlke{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_9{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Eyalet/Bölge:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditEyaletBolge">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditEyaletBolge{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>450</y>
+       <width>1001</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>18</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#label_12{
+color: rgb(0, 0, 0);}</string>
+        </property>
+        <property name="text">
+         <string>Sahip Bilgileri</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="rightMargin">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_13">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_13{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Ad</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditSahipAd">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditSahipAd{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_14{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Soyad</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditSahipSoyad">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditSahipSoyad{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_15">
+          <property name="font">
+           <font>
+            <family>Helvetica</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel#label_15{
+color: rgb(0, 0, 0);}</string>
+          </property>
+          <property name="text">
+           <string>Telefon</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditSahipTelefon">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit#lineEditSahipTelefon{
+background-color: transparent;
+border: 1px solid black;
+border-radius: 10px;
+color: rgb(0, 0, 0);
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page"/>
+   <widget class="QWidget" name="pageUrunler">
+    <property name="styleSheet">
+     <string notr="true">QWidget#pageUrunler {
+    background-color: #FFFFFF;
+}</string>
+    </property>
+    <widget class="QTableWidget" name="tableUrunler">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>641</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>142</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Ürün Fotoğrafı</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Ürün Adı</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Kategori</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Birim Fiyatı</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Stok Miktarı</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Birimi</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string/>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="btnSepet">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>560</y>
+       <width>60</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="cursor">
+      <cursorShape>OpenHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#btnSepet {
+   border-radius: 10px;
+}
+
+QPushButton#btnSepet:hover {
+    background-color: rgba(224, 224, 224, 0.2);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageSepet">
+    <widget class="QTableWidget" name="tableSepet">
+     <property name="geometry">
+      <rect>
+       <x>-5</x>
+       <y>1</y>
+       <width>1031</width>
+       <height>651</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>Ürün</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Miktar</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>New Column</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Toplam</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageSiparis">
+    <widget class="QTableWidget" name="tableSiparisler">
+     <property name="geometry">
+      <rect>
+       <x>-5</x>
+       <y>1</y>
+       <width>1011</width>
+       <height>641</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>Sipariş Numarası</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Müşteri</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Ürün</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Miktar</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Tahmini Teslim Tarihi</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Fiyat</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
