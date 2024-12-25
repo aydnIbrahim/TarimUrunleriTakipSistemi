@@ -53,12 +53,13 @@ class DatabaseConnection:
             print(f"Bağlantı kapatma hatası oluştu: {e}")
             raise e
 
-    def execute_query(self, query):
+    def execute_query(self, query, params=None):
         """
         Parametre olarak alınan SQL sorgusunu çalıştırır ve sonucu döndürür.
 
         Parametreler:
             query: Çalıştırmak istenen SQL sorgusu (ör: "SELECT TOP 10 * FROM Adresler")
+            params: Sorguya geçirilecek parametrelerin tuple veya liste formatında olması gerekir.
 
         Return:
             Sorgu sonucunu liste (list of pyodbc.Row) olarak döndürür.
@@ -68,9 +69,15 @@ class DatabaseConnection:
             if self.conn is None or self.cursor is None:
                 self.connect()
 
-            self.cursor.execute(query)
+            # Parametreli sorgu çalıştır
+            if params:
+                self.cursor.execute(query, params)
+            else:
+                self.cursor.execute(query)
+
             return self.cursor.fetchall()
 
         except pyodbc.Error as e:
             print(f"Sorgu çalıştırma hatası oluştu: {e}")
+            self.conn.rollback()
             raise e

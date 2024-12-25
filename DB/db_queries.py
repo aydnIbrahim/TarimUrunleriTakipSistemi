@@ -175,9 +175,11 @@ def getSiparislerVeSepet(param):
         query = """
             SELECT 
                 U.ResimYolu,
+                U.Ad,
                 S.Miktar,
                 S.Fiyat,
-                K.Kategori
+                K.Kategori,
+                B.Birim
             FROM 
                 Siparisler S
             JOIN 
@@ -192,7 +194,6 @@ def getSiparislerVeSepet(param):
                 S.SepetBiti = ?;
         """
 
-        # Parametreli sorgu çalıştırılır
         rows = db.execute_query(query, (param,))
 
         # Sonuçları döneriz
@@ -209,7 +210,7 @@ def getSiparislerVeSepet(param):
 
 def addToSepet(params):
     """
-    Sepete yeni bir ürün ekler. Eğer ürün zaten sepette varsa, SepetBiti'ni 1 yapar.
+    Sepete yeni bir ürün ekler.
 
     Parametreler:
         params (tuple): Sepete eklenecek ürün bilgileri.
@@ -242,31 +243,93 @@ def addToSepet(params):
 
         urun_id = urun.UrunID
 
-        # 2. Sepette ürün var mı kontrol et (MusteriID=1 ve UrunID)
-        check_query = """
-            SELECT SiparisID FROM Siparisler 
-            WHERE MusteriID = 1 AND UrunID = ? AND SepetBiti = 1;
-        """
-        db.cursor.execute(check_query, (urun_id,))
-        existing_order = db.cursor.fetchone()
+        update_stok_miktari_query = """UPDATE Urunler SET StokMiktari = StokMiktari - ? WHERE UrunID = ?"""
+        db.cursor.execute(update_stok_miktari_query, (miktar, urun_id))
 
-        if existing_order:
-            # Ürün sepette mevcut, güncelle
-            update_query = """
-                UPDATE Siparisler 
-                SET Miktar = Miktar + ?, Fiyat = ?
-                WHERE SiparisID = ?;
-            """
-            db.cursor.execute(update_query, (miktar, fiyat, existing_order.SiparisID))
-        else:
-            # Yeni ürün sepete ekle
-            insert_query = """
-                INSERT INTO Siparisler (MusteriID, UrunID, Miktar, Fiyat, SepetBiti, SiparisTarihi)
-                VALUES (1, ?, ?, ?, 1, GETDATE());
-            """
-            db.cursor.execute(insert_query, (urun_id, miktar, fiyat))
-
+        # Yeni ürün sepete ekle
+        insert_query = """
+                        INSERT INTO Siparisler (MusteriID, UrunID, Miktar, Fiyat, SepetBiti, SiparisTarihi)
+                        VALUES (1, ?, ?, ?, 0, GETDATE());
+                    """
+        db.cursor.execute(insert_query, (urun_id, miktar, fiyat))
         db.conn.commit()
+
+    except pyodbc.Error as e:
+        db.conn.rollback()
+        raise e
+
+    finally:
+        db.disconnect()
+
+
+def updateToSiparis(params):
+    """
+    Sepetteki ürünleri sipariş olarak günceller.
+    - params: Ürün adlarının listesi ['Elma', 'Domates', 'Bugday']
+    """
+    db = DatabaseConnection(
+        server=SERVER,
+        database=DATABASE,
+        username=USERNAME,
+        password=PASSWORD
+    )
+
+    try:
+        db.connect()
+
+        # Ürünlerin ID'lerini çek
+        get_urun_ids_query = f"""
+            SELECT UrunID FROM Urunler WHERE Ad IN ({', '.join('?' for _ in params)});
+        """
+        db.cursor.execute(get_urun_ids_query, params)
+        urun_ids = db.cursor.fetchall()
+
+        if not urun_ids:
+            print("Belirtilen ürünler bulunamadı!")
+            return
+
+        # ID'leri bir listeye dönüştür
+        urun_id_list = [urun[0] for urun in urun_ids]
+
+        # Siparişleri güncelle
+        update_to_siparis_query = f"""
+            UPDATE Siparisler 
+            SET SepetBiti = 1 
+            WHERE UrunID IN ({', '.join('?' for _ in urun_id_list)});
+        """
+        db.cursor.execute(update_to_siparis_query, urun_id_list)
+        db.conn.commit()
+
+    except pyodbc.Error as e:
+        db.conn.rollback()
+        print("Hata oluştu:", e)
+        raise e
+
+    finally:
+        db.disconnect()
+
+
+def searchUrunAd(param):
+    """
+    Search Bar'da aratılan ürün adına göre ürünleri sorgular.
+    :param param: Ürün adını getirir
+    :return:
+    """
+    db = DatabaseConnection(
+        server=SERVER,
+        database=DATABASE,
+        username=USERNAME,
+        password=PASSWORD
+    )
+    try:
+        query = ("""SELECT
+                                    Ad 
+                                    FROM 
+                                        Urunler
+                                    WHERE
+                                        Ad LIKE ?""")
+        p = '%d' + param + '%'
+        return db.execute_query(query, (p,))
 
     except pyodbc.Error as e:
         print(f"Hata oluştu: {e}")
