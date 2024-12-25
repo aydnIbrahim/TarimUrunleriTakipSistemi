@@ -48,8 +48,6 @@ class PageCiftlikEkle:
 
         self.ui.stackedWidget.setCurrentWidget(self.ui.pageCiftlikler)
 
-
-
     def btnSelectImageController(self):
         """
         Kullanıcıya bir fotoğraf seçme arayüzü sunar ve seçilen dosyanın yolunu döner.
