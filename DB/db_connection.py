@@ -62,7 +62,7 @@ class DatabaseConnection:
             params: Sorguya geçirilecek parametrelerin tuple veya liste formatında olması gerekir.
 
         Return:
-            Sorgu sonucunu liste (list of pyodbc.Row) olarak döndürür.
+            Sorgu sonucunu liste olarak döndürür.
         """
         try:
             # Bağlantı yoksa önce bağlantı kur

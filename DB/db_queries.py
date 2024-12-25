@@ -307,34 +307,3 @@ def updateToSiparis(params):
 
     finally:
         db.disconnect()
-
-
-def searchUrunAd(param):
-    """
-    Search Bar'da aratılan ürün adına göre ürünleri sorgular.
-    :param param: Ürün adını getirir
-    :return:
-    """
-    db = DatabaseConnection(
-        server=SERVER,
-        database=DATABASE,
-        username=USERNAME,
-        password=PASSWORD
-    )
-    try:
-        query = ("""SELECT
-                                    Ad 
-                                    FROM 
-                                        Urunler
-                                    WHERE
-                                        Ad LIKE ?""")
-        p = '%d' + param + '%'
-        return db.execute_query(query, (p,))
-
-    except pyodbc.Error as e:
-        print(f"Hata oluştu: {e}")
-        db.conn.rollback()
-        raise e
-
-    finally:
-        db.disconnect()
